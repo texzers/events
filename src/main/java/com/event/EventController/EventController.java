@@ -3,6 +3,7 @@ package com.event.EventController;
 import com.event.Entity.Eventsent;
 import com.event.EventServices.EventServices;
 import com.event.EventsPojo.Events;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class EventController {
     private EventServices eventServices;
 
     @PostMapping("/create")
-    public String addNewEvent(@RequestBody Events events){
+    public String addNewEvent(@Valid @RequestBody Events events){
         logger.info("Responsed Reached");
         if (events.getEventName() != "")
          return eventServices.CreateEvent(events);

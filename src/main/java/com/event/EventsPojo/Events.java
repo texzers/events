@@ -1,8 +1,14 @@
 package com.event.EventsPojo;
 
+import jakarta.validation.constraints.*;
+
 public class Events {
+
+    @NotNull
     private int EventID;
+    @NotBlank
     private String EventName;
+    @NotBlank
     private String Date;
     private String Location;
     private String organizer;
