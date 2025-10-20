@@ -4,57 +4,57 @@ import jakarta.validation.constraints.*;
 
 public class Events {
 
-    @NotNull
-    private int EventID;
-    @NotBlank
-    private String EventName;
-    @NotBlank
-    private String Date;
-    private String Location;
+    @Positive(message = "Id is invalid")
+    private int eventId;
+    @NotBlank(message = "Name is required")
+    private String eventName;
+    @NotBlank(message = "Date is required")
+    private String date;
+    private String location;
     private String organizer;
 
     public Events() {
 
     }
 
-    public Events(int eventID, String eventName, String date, String location, String organizer) {
-        EventID = eventID;
-        EventName = eventName;
-        Date = date;
-        Location = location;
+    public Events(int eventId, String eventName, String date, String location, String organizer) {
+        this.eventId = eventId;
+        this.eventName = eventName;
+        this.date = date;
+        this.location = location;
         this.organizer = organizer;
     }
 
-    public int getEventID() {
-        return EventID;
-    }
-
-    public void setEventID(int eventID) {
-        EventID = eventID;
-    }
-
     public String getEventName() {
-        return EventName;
+        return eventName;
     }
 
     public void setEventName(String eventName) {
-        EventName = eventName;
+        this.eventName = eventName;
+    }
+
+    public int getEventId() {
+        return eventId;
+    }
+
+    public void setEventId(int eventId) {
+        this.eventId = eventId;
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(String date) {
-        Date = date;
+        this.date = date;
     }
 
     public String getLocation() {
-        return Location;
+        return location;
     }
 
     public void setLocation(String location) {
-        Location = location;
+        this.location = location;
     }
 
     public String getOrganizer() {
@@ -64,4 +64,5 @@ public class Events {
     public void setOrganizer(String organizer) {
         this.organizer = organizer;
     }
+
 }
